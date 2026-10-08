@@ -1090,9 +1090,9 @@ impl Instance {
     /// buses, sets up 32-bit processing and activates the component.
     pub fn configure(&mut self, sample_rate: f64, max_frames: usize, mono: bool) -> Result<Layout, Vst3Error> {
         self.shutdown();
-        let audio = sv::MediaTypes_::kAudio;
-        let event = sv::MediaTypes_::kEvent;
-        let (din, dout) = (sv::BusDirections_::kInput, sv::BusDirections_::kOutput);
+        let audio = sv::MediaTypes_::kAudio as u32;
+        let event = sv::MediaTypes_::kEvent as u32;
+        let (din, dout) = (sv::BusDirections_::kInput as u32, sv::BusDirections_::kOutput as u32);
         let nin = self.bus_count(audio, din);
         let nout = self.bus_count(audio, dout);
         let current = |s: &Self, dir: u32, n: i32| -> Vec<sv::SpeakerArrangement> {
