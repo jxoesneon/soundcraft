@@ -4,8 +4,8 @@
 pub struct ChannelStrip {
     pub id: u64,
     pub name: String,
-    pub volume_db: f32,  // -60.0 .. +12.0 dB
-    pub pan: f32,        // -100.0 (L) .. +100.0 (R)
+    pub volume_db: f32, // -60.0 .. +12.0 dB
+    pub pan: f32,       // -100.0 (L) .. +100.0 (R)
     pub muted: bool,
     pub solo: bool,
     pub arm_record: bool,
@@ -19,17 +19,15 @@ pub struct MixerState {
 impl MixerState {
     pub fn new_stereo() -> Self {
         Self {
-            channels: vec![
-                ChannelStrip {
-                    id: 1,
-                    name: "Audio 1".to_string(),
-                    volume_db: 0.0,
-                    pan: 0.0,
-                    muted: false,
-                    solo: false,
-                    arm_record: false,
-                }
-            ],
+            channels: vec![ChannelStrip {
+                id: 1,
+                name: "Audio 1".to_string(),
+                volume_db: 0.0,
+                pan: 0.0,
+                muted: false,
+                solo: false,
+                arm_record: false,
+            }],
             master_volume_db: 0.0,
         }
     }

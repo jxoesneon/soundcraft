@@ -27,6 +27,7 @@ soundcraft-engine = { path = "crates/engine" }
 soundcraft-playback = { path = "crates/playback" }
 soundcraft-automation = { path = "crates/automation" }
 soundcraft-ui-egui = { path = "crates/ui-egui" }
+soundcraft-ui-martensite = { path = "crates/ui-martensite" }
 
 # foundation
 thiserror = "2"

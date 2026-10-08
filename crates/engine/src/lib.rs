@@ -86,6 +86,36 @@ struct HistoryEntry {
     doc: Arc<Session>,
 }
 
+/// Edit-window tool identity. UI-agnostic so every front-end (egui, Martensite,
+/// headless) shares the canonical list; each UI maps it to its own presentation.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+pub enum Tool {
+    /// Object/time selection.
+    Select,
+    /// Move clips in time or across tracks.
+    Grab,
+    /// Trim clip heads, tails and boundaries.
+    Trim,
+    /// Draw and edit crossfades/fade curves.
+    Fade,
+    /// Slip clip content inside its boundaries.
+    Slip,
+    /// Split clips at the click point.
+    Razor,
+    /// Write notes, breakpoints and clip shapes.
+    Draw,
+    /// Mute/unmute clips and notes.
+    Mute,
+    /// Scrub audio under the pointer.
+    Scrub,
+    /// Zoom the timeline.
+    Zoom,
+    /// Scroll the timeline/tracks.
+    Hand,
+    /// Context tool that follows the pointer zone.
+    Smart,
+}
+
 /// Engine state: the document, history, clipboard and transport plumbing.
 pub struct Engine {
     doc: Arc<Session>,

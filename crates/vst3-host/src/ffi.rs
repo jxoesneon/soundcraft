@@ -1166,8 +1166,7 @@ impl Instance {
         self.context.tempo = 120.0;
         self.context.timeSigNumerator = 4;
         self.context.timeSigDenominator = 4;
-        self.context.state = (sv::ProcessContext_::StatesAndFlags_::kTempoValid
-            | sv::ProcessContext_::StatesAndFlags_::kTimeSigValid) as u32;
+        self.context.state = (sv::ProcessContext_::StatesAndFlags_::kTempoValid | sv::ProcessContext_::StatesAndFlags_::kTimeSigValid) as u32;
         self.host.latency_changed.store(false, Ordering::Relaxed);
         Ok(layout)
     }
