@@ -72,6 +72,12 @@ impl KeyboardEngine {
     }
 }
 
+impl Default for KeyboardEngine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
