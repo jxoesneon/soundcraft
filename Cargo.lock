@@ -3547,6 +3547,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "soundcraft-ui-martensite"
+version = "0.1.0"
+dependencies = [
+ "proptest",
+ "serde",
+ "serde_json",
+ "tracing",
+]
+
+[[package]]
 name = "soundcraft-video"
 version = "0.1.0"
 dependencies = [
