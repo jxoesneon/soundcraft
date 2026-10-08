@@ -11,6 +11,7 @@ rust-version = "1.90"
 repository = "https://github.com/storytold/soundcraft"
 
 [workspace.dependencies]
+tracing = "0.1"
 # internal
 soundcraft-time = { path = "crates/time" }
 soundcraft-audio-io = { path = "crates/audio-io" }
