@@ -25,3 +25,8 @@ rfd.workspace = true
 [build-dependencies]
 # Icon + VERSIONINFO for soundcraft.exe; build.rs only uses it when the target is Windows.
 winresource = "0.1"
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/soundcraft", dest = "/usr/bin/soundcraft", mode = "755" }
+]
